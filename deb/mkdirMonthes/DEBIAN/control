@@ -1,0 +1,9 @@
+Package: mkdirMonthes
+Version: 1.0-1
+Section: misc
+Architecture: all
+Priority: optional
+Depends: python3
+Maintainer: Alex <alexfomg@gmail.com>
+Description: mkdir_monthes
+Installed-Size: 432
