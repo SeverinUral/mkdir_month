@@ -5,7 +5,7 @@ cp -vf mkdir_monthes.py deb/mkdirMonthes/usr/bin/mkdirMonthes
 
 chmod +x deb/mkdirMonthes/usr/bin/mkdirMonthes
 
-echo "Previous $(cat deb/mkdirMonthes/DEBIAN/control | grep '^Version:')"
+echo "Previous $(grep '^Version:' deb/mkdirMonthes/DEBIAN/control)"
 echo "Enter new version (x.x-x.x):"
 read VERSION
 
