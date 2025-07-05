@@ -9,8 +9,6 @@ echo "Previous $(grep '^Version:' deb/mkdirMonthes/DEBIAN/control)"
 echo "Enter new version (x.x-x.x):"
 read VERSION
 
-rm -rfv deb/mkdirMonthes/DEBIAN/control 
-
 CONTROL_FILE="Package: mkdirMonthes
 Version: $VERSION
 Section: graphics
