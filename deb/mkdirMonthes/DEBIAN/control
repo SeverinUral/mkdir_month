@@ -1,9 +1,0 @@
-Package: mkdirMonthes
-Version: 1.0-1
-Section: graphics
-Architecture: all
-Priority: optional
-Depends: python3
-Maintainer: Alex <alexfomg@gmail.com>
-Description: Programm for sorting shots by creation date
-Installed-Size: 16827

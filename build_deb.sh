@@ -1,13 +1,15 @@
 #!/bin/bash
 # Fomenko A V  2025 (c)
 
-cp -vf mkdir_monthes.py deb/mkdirMonthes/usr/bin/mkdirMonthes
+mkdir -pv deb/mkdirMonthes/{DEBIAN/,usr/bin/}
 
+cp -vf mkdir_monthes.py deb/mkdirMonthes/usr/bin/mkdirMonthes
 chmod +x deb/mkdirMonthes/usr/bin/mkdirMonthes
 
-echo "Previous $(grep '^Version:' deb/mkdirMonthes/DEBIAN/control)"
-echo "Enter new version (x.x-x.x):"
-read VERSION
+echo "Previous version $(ls *.deb | grep -o '[0-9]*.[0-9]*-[0-9]*.[0-9]*')"
+read -p "Enter Version (x.x-x.x): " VERSION
+
+rm -rfv *.deb
 
 CONTROL_FILE="Package: mkdirMonthes
 Version: $VERSION
@@ -22,4 +24,11 @@ Installed-Size: $(du -sb deb/mkdirMonthes | grep -o '^[0-9]*')"
 echo "$CONTROL_FILE" > deb/mkdirMonthes/DEBIAN/control 
 
 cd deb/
-./make_deb.sh 
+
+fakeroot dpkg-deb --build mkdirMonthes .
+
+mv *.deb ..
+
+cd ..
+
+rm -rf deb
