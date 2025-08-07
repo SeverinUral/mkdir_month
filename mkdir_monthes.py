@@ -14,8 +14,8 @@ def main():
     year = datetime.now().year
     i = 1
 
-     for m in month_name[1:]:
-         try:
+    for m in month_name[1:]:
+        try:
             os.makedirs("{}/{:0=2} {}".format(year, i, m.capitalize()))
         except:
             pass
