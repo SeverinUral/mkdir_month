@@ -3,22 +3,21 @@
 # (c) 2022 fomenko a v
 
 import os
-from datetime import *
-from calendar import month_name
-
 import locale
-locale.setlocale(locale.lc_all, '')
+from datetime import datetime
+from calendar import month_name
 
 
 def main():
+    locale.setlocale(locale.LC_ALL, 'ru_RU.UTF-8')
     year = datetime.now().year
     i = 1
 
     for m in month_name[1:]:
         try:
-            os.makedirs("{}/{:0=2} {}".format(year, i, m.capitalize()))
-        except:
-            pass
+            os.makedirs(f"{year}/{i:0=2} {m.capitalize()}")
+        except Exception as e:
+            print(e)
         i += 1
 
 
