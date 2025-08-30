@@ -18,7 +18,7 @@ Architecture: all
 Priority: optional
 Depends: python3
 Maintainer: Alex <alexfomg@gmail.com>
-Description: Programm for sorting shots by creation date
+Description: Create 12 directories named like #01 Janurey#, #02 Februry# ...
 Installed-Size: $(du -sb deb/mkdirMonthes | grep -o '^[0-9]*')" 
 
 echo "$CONTROL_FILE" > deb/mkdirMonthes/DEBIAN/control 
